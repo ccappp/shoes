@@ -743,7 +743,7 @@ impl<'a> UdpRouter<'a> {
 
         for i in 0..session_count {
             let idx = (self.session_poll_position + i) % session_count;
-            let Some((&id, session)) = self.sessions.get_index_mut(idx) else {
+            let Some((id, session)) = self.sessions.get_index_mut(idx) else {
                 continue;
             };
 
